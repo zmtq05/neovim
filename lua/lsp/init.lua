@@ -45,7 +45,13 @@ require("fidget").setup {
   },
 }
 
-require("nvim-lsp-installer").on_server_ready(function(server)
-  local config = require("lsp.config")
-  server:setup(config[server.name] or config.default)
-end)
+local servers = { "sumneko_lua", "rust_analyzer" }
+local config = require("lsp.config")
+
+require("nvim-lsp-installer").setup {
+  ensure_installed = servers,
+  automatic_installation = true
+}
+
+local lsp = require("lspconfig")
+lsp.sumneko_lua.setup(config.sumneko_lua)

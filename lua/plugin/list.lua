@@ -19,7 +19,8 @@ use_clean {
 
 use {
   "mhinz/vim-startify",
-  { "~/repo/fork/which-key.nvim", config = "require'which-key'.setup{}" },
+  --{ "~/repo/fork/which-key.nvim", config = "require'which-key'.setup{}" },
+  { "folke/which-key.nvim", config = "require'which-key'.setup{}" },
   "stevearc/dressing.nvim",
   { "numToStr/Comment.nvim", config = "require'Comment'.setup{padding=false}" },
   { "norcalli/nvim-colorizer.lua", config = "require'colorizer'.setup(nil, { RGB = false })" },
@@ -88,8 +89,8 @@ use {
     --{ "narutoxy/dim.lua", requires = treesitter },
     { "folke/lua-dev.nvim", ft = "lua" },
     --{ "teal-language/vim-teal", ft = "teal" },
-    --{ "simrat39/rust-tools.nvim", ft = "rust" },
-    { "zmtq05/rust-tools.nvim", ft = "rust" },
+    { "simrat39/rust-tools.nvim", ft = "rust" },
+    --{ "zmtq05/rust-tools.nvim", ft = "rust" },
     "ericpubu/lsp_codelens_extensions.nvim",
   },
 }
@@ -102,7 +103,6 @@ use_clean {
 -- auto completion
 use {
   "hrsh7th/nvim-cmp",
-  branch = "dev",
   requires = {
     -- sources
     "hrsh7th/cmp-buffer",
