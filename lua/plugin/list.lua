@@ -86,11 +86,8 @@ use {
     "hrsh7th/cmp-nvim-lsp",
     "j-hui/fidget.nvim", -- show LSP progress
     { "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" },
-    --{ "narutoxy/dim.lua", requires = treesitter },
     { "folke/lua-dev.nvim", ft = "lua" },
-    --{ "teal-language/vim-teal", ft = "teal" },
     { "simrat39/rust-tools.nvim", ft = "rust" },
-    --{ "zmtq05/rust-tools.nvim", ft = "rust" },
     "ericpubu/lsp_codelens_extensions.nvim",
   },
 }
@@ -123,7 +120,14 @@ use {
 use({
   { "noib3/nvim-cokeline" },
   --"feline-nvim/feline.nvim",
-  { "kyazdani42/nvim-tree.lua", keys = "<leader>e" },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim"
+    }
+  },
 }, { requires = "kyazdani42/nvim-web-devicons" })
 
 use {
